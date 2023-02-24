@@ -1,0 +1,48 @@
+BoxLayout:
+    orientation: 'horizontal'
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_x: 0.4
+        Label:
+            text: "Sort by:"
+        Spinner:
+            id: sort_by
+            text: "Author"
+            values: ["Author", "Title", "Pages", "Completed"]
+            on_text: app.sort_books(self.text)
+        Label:
+            text: "Add new book..."
+        Label:
+            text: "Title:"
+        TextInput:
+            id: new_title
+            write_tab: False
+			multiline: False
+	    Label:
+	        text: "Author:"
+	    TextInput:
+            id: new_author
+            write_tab: False
+			multiline: False
+		Label:
+		    text: "Pages:"
+		TextInput:
+            id: new_pages
+            write_tab: False
+			multiline: False
+        Button:
+            text: "Add Book"
+        Button:
+            text: "Clear"
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: "Pages to read:"
+            size_hint_y: 0.1
+        BoxLayout:
+            id: book_list
+            orientation: 'vertical'
+        Label:
+            id: status_bar
+            size_hint_y: 0.1
+
